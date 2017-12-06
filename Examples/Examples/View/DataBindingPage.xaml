@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.View.DataBindingPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold"></Label>
+            
+            <Slider 
+                x:Name="TestSlider" 
+                Minimum="0" 
+                Maximum="100"
+                Value="0"></Slider>
+            
+            <Label FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   BindingContext="{x:Reference TestSlider}"
+                   Text="{Binding Value}"></Label>
+            
+            <Label Text="--------------------------------------"></Label>
+            
+            <Label
+                Text="{Binding LabelText}"
+                BackgroundColor="Blue"
+                TextColor="White"></Label>
+            
+            <Button
+                Text="Change Text to Whatever"
+                BackgroundColor="Blue"
+                TextColor="AliceBlue"
+                Command="{Binding ChangeTextCommand}"></Button>
+            
+            <Label Text="-----------------------------------------"></Label>
+            
+            <Image
+                Source="icon.png"
+                Aspect="AspectFit"
+                WidthRequest="75"
+                HeightRequest="75"></Image>
+            
+            <Label Text="------------------------------------------"></Label>
+            <Label Text="ListView Demo with Images"></Label>
+            <ListView 
+                ItemsSource="{Binding People}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell 
+                            Text="{Binding Name}"
+                            Detail="{Binding Address}"
+                            ImageSource="{Binding ImageSource}"
+                            TextColor="Black"
+                            DetailColor="Gray"></ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

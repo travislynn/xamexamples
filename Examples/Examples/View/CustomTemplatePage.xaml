@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Examples.Converters;assembly=Examples"
+             x:Class="Examples.View.CustomTemplatePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DoubleToIntConverter
+                x:Key="doubleToIntegerConverter"></converters:DoubleToIntConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold" />
+
+            <Label Text="ListView Custom Template"></Label>
+            <ListView 
+                ItemsSource="{Binding People}"
+                HasUnevenRows="True"
+                ItemSelected="ListView_OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView>
+                                <StackLayout Padding="20">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding FirstName}"
+                                               FontSize="20"
+                                               FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding LastName}"
+                                            FontSize="20"
+                                            FontAttributes="Bold">
+                                        </Label>
+                                    </StackLayout>
+                                    
+                                    <Label Text="{Binding Address}"
+                                           FontSize="15"></Label>
+                                    
+                                    
+                                </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Label Text="-- DoubleToIntConverter: ----"></Label>
+
+            <ListView 
+                ItemsSource="{Binding People}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding FirstName}"
+                            Detail="{Binding Age, Converter={StaticResource doubleToIntegerConverter}}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

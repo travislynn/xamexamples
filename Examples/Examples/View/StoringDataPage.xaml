@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.View.StoringDataPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="Start">
+            <Label Text="{Binding Title}" />
+
+            <Label Text="People in static list of People"></Label>
+            <ListView 
+                ItemsSource="{Binding People}"
+                HasUnevenRows="True"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView>
+                                <StackLayout Padding="20">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding FirstName}"
+                                               FontSize="20"
+                                               FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding LastName}"
+                                               FontSize="20"
+                                               FontAttributes="Bold">
+                                        </Label>
+                                    </StackLayout>
+                                    <Label Text="{Binding Address}"
+                                           FontSize="15"></Label>
+                                    <Label Text="{Binding PhoneNumber}"
+                                           FontSize="15"></Label>
+                                </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal">
+                
+                <Entry x:Name="FirstNameEntry"
+                       Placeholder="First Name"
+                       Text="{Binding FirstName}"></Entry>
+
+                <Entry x:Name="LastNameEntry"
+                       Placeholder="Last Name"
+                       Text="{Binding LastName}"></Entry>
+
+            </StackLayout>
+            
+            <Entry
+                x:Name="PHoneNumberEntry"
+                Placeholder="Phone Number"
+                Text="{Binding PhoneNumber}"></Entry>
+            
+            <Button
+                Text="Add"
+                Clicked="AddButton_OnClicked"></Button>
+            
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Examples"
+             x:Class="Examples.View.MainPage">
+    
+    
+        <StackLayout Margin="20">
+            <Label Text="Examples Library" FontSize="Large" FontAttributes="Bold"></Label>
+            <Button x:Name="SliderButton" Text="Slider" Clicked="SliderButton_OnClicked"></Button>
+            <Button x:Name="GridButton" Text="Grid" Clicked="GridButton_OnClicked"></Button>
+            <Button x:Name="DataBindingButton" Text="Data Binding" Clicked="DataBindingButton_OnClicked"></Button>
+            <Button x:Name="CustomTemplateButton" Text="Custom Template" Clicked="CustomTemplateButton_OnClicked"></Button>
+            <Button x:Name="BehaviorButton" Text="Behavior" Clicked="BehaviorButton_OnClicked"></Button>
+            <Button x:Name="EventToCommandButton" Text="Event to Command" Clicked="EventToCommandButton_OnClicked"></Button>
+            <Button x:Name="StoringDataButton" Text="Storing Data" Clicked="StoringDataButton_OnClicked"></Button>
+            
+            
+        </StackLayout>
+    
+</ContentPage>

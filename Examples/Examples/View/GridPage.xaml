@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.View.GridPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            
+            <Label Text="Grid Demos" FontSize="Large" FontAttributes="Bold" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="*"></RowDefinition>
+                    <RowDefinition
+                        Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Upper Left" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Text="Upper Right" Grid.Row="0" Grid.Column="1"></Label>
+                <Label Text="Bottom Left" Grid.Row="1" Grid.Column="0"></Label>
+                <Label Text="Bottom Right" Grid.Row="1" Grid.Column="1"></Label>
+            </Grid>
+         
+            <Label Text="------------------------------------------------------"></Label>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="{Binding Prompt}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End"></Label>
+                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start"></Label>
+                <Label Text="Twice as High" Grid.Row="1" Grid.Column="0"></Label>
+                <Label Text="Row 3 Very Wide" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

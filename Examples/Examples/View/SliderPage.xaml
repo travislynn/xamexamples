@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examples.View.SliderPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Slider Demo"
+               FontSize="Large" FontAttributes="Bold" />
+
+            <Slider Minimum="0" Maximum="100" x:Name="TestSlider" Value="0"></Slider>
+
+            <Label
+                x:Name="SliderLabel"
+                FontAttributes="Bold"
+                TextColor="Yellow"
+                BackgroundColor="Black"
+                FontSize="40"
+                BindingContext="{x:Reference TestSlider}"
+                Text="{Binding Value}"></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
