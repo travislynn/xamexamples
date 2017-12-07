@@ -43,6 +43,7 @@
     <Compile Include="Behaviors\IntValidationBehavior.cs" />
     <Compile Include="Converters\DoubleToIntConverter.cs" />
     <Compile Include="Converters\SelectedItemEventArgsToSelectedItemConverter.cs" />
+    <Compile Include="Converters\testfile.cs" />
     <Compile Include="Data\IFileHelper.cs" />
     <Compile Include="Data\PersonDatabase.cs" />
     <Compile Include="Model\Person.cs" />
